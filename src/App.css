@@ -39,7 +39,7 @@
   }
 }
 .main-container{
-
+  margin: 0 5%;
 }
 .pool-line{
   display: flex;
@@ -59,9 +59,18 @@
   cursor: pointer;
 }
 .img-container{
+  display: flex;
+  flex-wrap: wrap;
 }
-img{
-  max-width: 200px;
-  margin-left: 20px;
+.img-container .img-block{
+  margin-left: 30px;
   margin-top: 10px;
+  text-align: center;
+}
+.img-container img{
+  height: 200px;
+  width: 200px;
+}
+.pool-line img{
+  cursor: pointer;
 }
