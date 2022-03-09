@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Modal,Button, Input } from 'antd';
 import {useEffect, useState} from "react";
@@ -140,7 +139,7 @@ const chou = (detail,secondSelect, n)=>{
     for(let i = 0; i< n ; i++){
         result.push(rand(detail[index].item))
     }
-    return result
+    return result.sort((a,b) =>{return a[2]- b[2]})
 }
 const textResult = (result) =>{
     let  obj = {}
@@ -386,8 +385,11 @@ function App() {
             okText:"知道了",
             content: (
                 <div>
-                    这是一个公告
+                    <div>V1.0试运行版本，后续更新V2.0，包括美术资源优化，上线食魂抽卡功能。</div>
+                    <div>血统测试！概不负责！梦里都有！天天好运来祝你天天好运！</div>
+                    <div>iv1 榜一协会天天好运来持续招新中！大佬众多，稳定飞龙（接近2条命），福利拉满，热闹友好</div>
                 </div>
+
             ),
             onOk() {},
         });
@@ -437,8 +439,8 @@ function App() {
                     setNumber(e.target.value)
                 }}/>
                 <Button style={{marginLeft: 10}} disabled={result.length > 0} onClick={()=>{
-                    if(number > 50){
-                        alert("请输入小于等于50的次数")
+                    if(number > 100){
+                        alert("请输入小于等于100的次数")
                         return false
                     }
                     else if(number < 0 || isNaN(Number(number)) || number.toString().indexOf(".") > -1){
@@ -465,7 +467,7 @@ function App() {
                                     return(
                                         <div className={"img-block"} key={i}>
                                             <img key={i} src={item[1]} alt=""/>
-                                            <div style={{color: "red",fontSize:24, marginTop:10}}>{item[0]}</div>
+                                            <div style={{color: item[2] === 1 ? "Gold" : "Cyan",fontSize:24, marginTop:10}}>{item[0]}</div>
                                         </div>
                                     )
                                 })
@@ -477,7 +479,7 @@ function App() {
                                 setResult([])
                             }
                             }>继续抽奖</Button>
-                            <Button type={"primary"} style={{marginLeft: 10}}>历史结果</Button>
+                            {/*<Button type={"primary"} style={{marginLeft: 10}}>历史结果</Button>*/}
                         </div>
                     </div>
                 }
