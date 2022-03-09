@@ -393,7 +393,7 @@ function App() {
         });
     }
     useEffect(()=>{
-        // info()
+        info()
     },[])
   return (
     <div className="App">
@@ -483,9 +483,9 @@ function App() {
                 }
             </div>
         </div>
-        {/*<div className={"footer"}>*/}
-        {/*    design by wxk666*/}
-        {/*</div>*/}
+        <div className={"footer"}>
+            <div style={{height:100}}/>
+        </div>
     </div>
   );
 }
