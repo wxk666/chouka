@@ -401,7 +401,7 @@ function App() {
   return (
     <div className="App">
         <audio autoPlay="true" controls="controls" loop="loop" preload="auto"
-               src={mp3}>
+               src={mp3} style={{float: "right"}}>
             你的浏览器版本太低，不支持audio标签
         </audio>
         <div className={"main-container"}>
@@ -452,7 +452,7 @@ function App() {
                         alert("请输入正整数")
                         return false
                     }
-                    else if(!poolDetail[poolSelect]){
+                    else if(!poolDetail[poolSelect] || secondPoolSelect === "未选择"){
                         alert("请选择池子")
                         return false
                     }
@@ -460,6 +460,12 @@ function App() {
                         setResult(chou(poolDetail[poolSelect],secondPoolSelect, number))
                     }
                 }}>抽奖</Button>
+                {
+                    result.length > 0 && <Button style={{marginLeft:10}} type={"primary"} onClick={()=>{
+                        setResult([])
+                    }
+                    }>继续抽奖</Button>
+                }
             </div>
             <div style={{minHeight:200}}>
                 {
@@ -478,14 +484,14 @@ function App() {
                                 })
                             }
                         </div>
-                        <div>本次获得: {textResult(result)}</div>
-                        <div className={"btn-line"} style={{marginTop:20, textAlign:"center"}}>
-                            <Button type={"primary"} onClick={()=>{
-                                setResult([])
-                            }
-                            }>继续抽奖</Button>
-                            {/*<Button type={"primary"} style={{marginLeft: 10}}>历史结果</Button>*/}
-                        </div>
+                        {/*<div>本次获得: {textResult(result)}</div>*/}
+                        {/*<div className={"btn-line"} style={{marginTop:20, textAlign:"center"}}>*/}
+                        {/*    <Button type={"primary"} onClick={()=>{*/}
+                        {/*        setResult([])*/}
+                        {/*    }*/}
+                        {/*    }>继续抽奖</Button>*/}
+                        {/*    /!*<Button type={"primary"} style={{marginLeft: 10}}>历史结果</Button>*!/*/}
+                        {/*</div>*/}
                     </div>
                 }
             </div>
