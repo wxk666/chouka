@@ -1,6 +1,7 @@
 import './App.css';
 import { Modal,Button, Input } from 'antd';
 import {useEffect, useState} from "react";
+import mp3 from "./asset/1.mp3"
 import bg from "./asset/bg.png"
 import jiu_main from "./asset/jiu_main.png"
 import shao_main from "./asset/shao_main.png"
@@ -399,6 +400,10 @@ function App() {
     },[])
   return (
     <div className="App">
+        <audio autoPlay="true" controls="controls" loop="loop" preload="auto"
+               src={mp3} style={{display: "none"}}>
+            你的浏览器版本太低，不支持audio标签
+        </audio>
         <div className={"main-container"}>
             <img style={{width:"70%", margin:"0 15%"}} src={bg} alt=""/>
             <div className={"pool-line"}>
