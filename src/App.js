@@ -484,7 +484,7 @@ function App() {
                                 })
                             }
                         </div>
-                        {/*<div>本次获得: {textResult(result)}</div>*/}
+                        <div>本次获得: {textResult(result)}</div>
                         {/*<div className={"btn-line"} style={{marginTop:20, textAlign:"center"}}>*/}
                         {/*    <Button type={"primary"} onClick={()=>{*/}
                         {/*        setResult([])*/}
