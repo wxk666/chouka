@@ -401,7 +401,7 @@ function App() {
   return (
     <div className="App">
         <audio autoPlay="true" controls="controls" loop="loop" preload="auto"
-               src={mp3} style={{display: "none"}}>
+               src={mp3}>
             你的浏览器版本太低，不支持audio标签
         </audio>
         <div className={"main-container"}>
